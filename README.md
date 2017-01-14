@@ -1,6 +1,6 @@
 #Cesium版歴史的農業環境閲覧システム
 
-![イメージ](https://raw.githubusercontent.com/HabsNiaes/HabsCesium/master/img/6.jpg)
+![イメージ](/img/6.jpg)
 
 
 ##動作環境
@@ -111,7 +111,7 @@ $ st -nc  #-ncはキャッシュの無効化
 ###③ブラウザでの立ち上げ
 ブラウザを立ち上げて、[http://127.0.0.1:1337/index.html](http://127.0.0.1:1337/index.html) をURLに入力すると、Cesiumが立ち上がる。
 
-![https://raw.githubusercontent.com/HabsNiaes/HabsCesium/master/img/0.png](https://raw.githubusercontent.com/HabsNiaes/HabsCesium/master/img/7.png)
+![/img/0.png](/img/7.png)
 
 
 ##2.各種Cesiumの機能

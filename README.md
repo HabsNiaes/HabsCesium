@@ -1,9 +1,9 @@
-#Cesium版歴史的農業環境閲覧システム
+# Cesium版歴史的農業環境閲覧システム
 
 ![イメージ](/img/6.jpg)
 
 
-##動作環境
+## 動作環境
 
 - Cesium 1.19
 - Node.js 4.1.1
@@ -11,15 +11,15 @@
 - Google Chrome
 
 
-##0.開発環境の構築
+## 0.開発環境の構築
 Cesium版歴史的農業環境閲覧システムを使った開発に便利なアプリケーションを紹介します。
 
-###①Gitのインソール
+### ①Gitのインソール
 GitHubからソースコードをダウンロードします。[サルでもわかるGit入門](http://www.backlog.jp/git-guide/intro/intro2_1.html) に使用しているOSごとのGitのインストール方法が説明されてます。
 
 
-###②Node.jsのインストール
-###nodebrewのインストール
+### ②Node.jsのインストール
+### nodebrewのインストール
 Node.jsのバージョン管理をするために、nodebrewをインストールします。詳しくは、[こちら](http://qiita.com/sinmetal/items/154e81823f386279b33c)を参照してください。Windowsユーザーの人は[nodeist](http://qiita.com/Kackey/items/b41b11bcf1c0b0d76149)をインストールします。
 
 ```bash
@@ -28,7 +28,7 @@ $ export PATH=$HOME/.nodebrew/current/bin:$PATH
 $ source ~/.bash_profile
 ```
 
-###Node.jsのインストール
+### Node.jsのインストール
 Node.jsを使うときには安定バージョン（Stable）を利用するといいです。
 [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
@@ -58,15 +58,15 @@ $ npm -v
 
 
 
-##1.Cesiumのローカル環境での立ち上げ
-###①GitHubからソースコードのClone
+## 1.Cesiumのローカル環境での立ち上げ
+### ①GitHubからソースコードのClone
 
 ```bash
 $ git clone https://github.com/HabsNiaes/HabsCesium.git
 $ cd HabsCesium
 ```
 
-####各ファイルの構成
+#### 各ファイルの構成
 GitHubからCloneしたファイルの構成は下記の図の通りです。
 
 ```bash
@@ -92,7 +92,7 @@ cesium-project
 - `JavaScript`：[kochizufanさん](https://github.com/kochizufan)の[地理院標高タイルのライブラリ](https://github.com/tilemapjp/Cesium-JapanGSI)が入ってます。
 
 
-###②ローカルサーバー立ち上げ
+### ②ローカルサーバー立ち上げ
 [Same-Origin Policy](https://ja.wikipedia.org/wiki/%E5%90%8C%E4%B8%80%E7%94%9F%E6%88%90%E5%85%83%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC)のため、Cesiumの開発のためにローカルにサーバーを立ち上げます。
 
 ```bash
@@ -108,14 +108,14 @@ $ st -nc  #-ncはキャッシュの無効化
 	listening at http://127.0.0.1:1337
 ```
 
-###③ブラウザでの立ち上げ
+### ③ブラウザでの立ち上げ
 ブラウザを立ち上げて、[http://127.0.0.1:1337/index.html](http://127.0.0.1:1337/index.html) をURLに入力すると、Cesiumが立ち上がる。
 
 ![/img/0.png](/img/7.png)
 
 
-##2.各種Cesiumの機能
-###①デフォルトのウィジェット設定
+## 2.各種Cesiumの機能
+### ①デフォルトのウィジェット設定
 デフォルトの状態ではいろいろなウィジェット設定されています。そのため、必要ないウィジェットをオフにします。
 
 ```javascript
@@ -126,7 +126,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
 });
 ```
 
-###②地理院標高タイルの読み込み
+### ②地理院標高タイルの読み込み
 
 `index.html`に`JapanGSITerrainProvider.js`の読み込みのコードを記述します。
 
@@ -144,7 +144,7 @@ viewer.terrainProvider = terrainProvider;
 
 ```
 
-###②初期の視点設定
+### ②初期の視点設定
 関東周辺部に初期の視点になるよう`main.js`に以下を記述します。
 
 ```javascript
@@ -158,7 +158,7 @@ viewer.camera.setView({
 });
 ```
 
-###③KMLの読み込み
+### ③KMLの読み込み
 KMLファイルを読み込むよう`main.js`に以下を記述します。
 
 ```javascript
@@ -170,7 +170,7 @@ viewer.dataSources.add(Cesium.KmlDataSource.load('kml/shizu.kmz'),{
 ```
 
 
-###④各種レイヤの読み込み
+### ④各種レイヤの読み込み
 各種レイヤ読み込み方法にはプルダウンメニューとチェックボックスの2つの設定しました。`main.js`に下記の要素を記入することでレイヤの追加、削除ができます。
 
 - `addBaseLayerOption();`：プルダウンメニューでのレイヤ切り替え
